@@ -1,0 +1,70 @@
+version: '3.9'
+
+services:
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:15-alpine
+    container_name: webshield-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: webshield
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d webshield"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── OWASP ZAP ───────────────────────────────────────────────────────────────
+  zap:
+    image: ghcr.io/zaproxy/zaproxy:stable
+    container_name: webshield-zap
+    restart: unless-stopped
+    command: zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true
+    ports:
+      - "8080:8080"
+
+  # ── WebShield API ────────────────────────────────────────────────────────────
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: webshield-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      zap:
+        condition: service_started
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/webshield
+      JWT_SECRET: ${JWT_SECRET:-changeme-use-a-strong-secret-in-production}
+      JWT_EXPIRY: 86400
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
+      API_BASE_URL: ${API_BASE_URL:-http://localhost:3001}
+      ZAP_API_URL: http://zap:8080
+      ZAP_API_KEY: ""
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      SMTP_HOST: ${SMTP_HOST:-localhost}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      SMTP_FROM: ${SMTP_FROM:-"WebShield <no-reply@webshield.local>"}
+      REPORTS_DIR: /app/reports
+    volumes:
+      - reports:/app/reports
+    ports:
+      - "3001:3001"
+
+volumes:
+  pgdata:
+  reports:

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebShield Security Report — https://web.whatsapp.com/</title>
+<style>
+  body { font-family: Arial, sans-serif; color: #222; margin: 0; padding: 0; }
+  .cover { background: #0a0f1e; color: #fff; padding: 60px 40px; page-break-after: always; }
+  .cover h1 { font-size: 2.5rem; margin-bottom: 8px; }
+  .cover p { font-size: 1.1rem; color: #aaa; }
+  .section { padding: 30px 40px; }
+  h2 { color: #0a0f1e; border-bottom: 2px solid #00d4ff; padding-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th { background: #0a0f1e; color: #fff; padding: 8px 12px; text-align: left; }
+  td { padding: 8px 12px; border-bottom: 1px solid #e0e0e0; }
+  tr:nth-child(even) td { background: #f9f9f9; }
+  .badge { display:inline-block; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 0.85rem; text-transform: capitalize; }
+  .vuln-detail { margin: 20px 0; }
+  code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9rem; word-break: break-all; }
+  .risk-summary { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
+  .risk-card { padding: 16px 24px; border-radius: 8px; color: #fff; text-align: center; min-width: 100px; }
+  .risk-card .count { font-size: 2rem; font-weight: bold; }
+  .risk-card .label { font-size: 0.85rem; text-transform: capitalize; }
+  pre { white-space: pre-wrap; word-break: break-word; }
+</style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<div class="cover">
+  <h1>🛡️ WebShield Security Report</h1>
+  <p><strong>Target:</strong> https://web.whatsapp.com/</p>
+  <p><strong>Scan Date:</strong> 8/26/2026, 10:51:25 PM</p>
+  <p><strong>Duration:</strong> 13s</p>
+  <p><strong>Total Vulnerabilities:</strong> 18</p>
+  <p><strong>Status:</strong> completed</p>
+</div>
+
+<!-- Executive Summary -->
+<div class="section">
+  <h2>Executive Summary</h2>
+  <pre>Security Scan Summary
+
+The scan identified 18 vulnerability/vulnerabilities in total. Critical: 7, High: 0, Medium: 2, Low: 9.
+
+Immediate attention is recommended for all Critical and High severity findings. Please review each vulnerability and apply the recommended remediations.</pre>
+</div>
+
+<!-- Risk Summary -->
+<div class="section">
+  <h2>Risk Summary</h2>
+  <div class="risk-summary">
+    
+      <div class="risk-card" style="background:#ff4757">
+        <div class="count">7</div>
+        <div class="label">critical</div>
+      </div>
+      <div class="risk-card" style="background:#ff6348">
+        <div class="count">0</div>
+        <div class="label">high</div>
+      </div>
+      <div class="risk-card" style="background:#ffa502">
+        <div class="count">2</div>
+        <div class="label">medium</div>
+      </div>
+      <div class="risk-card" style="background:#2ed573">
+        <div class="count">9</div>
+        <div class="label">low</div>
+      </div>
+      <div class="risk-card" style="background:#747d8c">
+        <div class="count">0</div>
+        <div class="label">informational</div>
+      </div>
+  </div>
+</div>
+
+<!-- OWASP Breakdown -->
+<div class="section">
+  <h2>OWASP Category Breakdown</h2>
+  <table>
+    <thead><tr><th>OWASP Category</th><th>Count</th></tr></thead>
+    <tbody><tr><td>A05:2021 – Security Misconfiguration</td><td>15</td></tr><tr><td>A05:2021 - Security Misconfiguration</td><td>2</td></tr><tr><td>A02:2021 - Cryptographic Failures</td><td>1</td></tr></tbody>
+  </table>
+</div>
+
+<!-- Vulnerability Findings Table -->
+<div class="section">
+  <h2>Vulnerability Findings (18 total)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Risk Level</th><th>OWASP Category</th><th>AI Score</th><th>Affected URL</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>Missing X-Frame-Options Header</td>
+          <td><span class="badge" style="background:#ffa502">medium</span></td>
+          <td>A05:2021 - Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/</td>
+        </tr>
+        <tr>
+          <td>Missing Referrer-Policy Header</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 - Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/</td>
+        </tr>
+        <tr>
+          <td>TLS Certificate Expiring Soon</td>
+          <td><span class="badge" style="background:#ffa502">medium</span></td>
+          <td>A02:2021 - Cryptographic Failures</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /admin</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/admin</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /wp-admin</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/wp-admin</td>
+        </tr>
+        <tr>
+          <td>Sensitive File Exposed: /.env</td>
+          <td><span class="badge" style="background:#ff4757">critical</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/.env</td>
+        </tr>
+        <tr>
+          <td>Sensitive File Exposed: /.git/config</td>
+          <td><span class="badge" style="background:#ff4757">critical</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/.git/config</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /backup</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/backup</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /config</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/config</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /robots.txt</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/robots.txt</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /sitemap.xml</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/sitemap.xml</td>
+        </tr>
+        <tr>
+          <td>Sensitive File Exposed: /backup.sql</td>
+          <td><span class="badge" style="background:#ff4757">critical</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/backup.sql</td>
+        </tr>
+        <tr>
+          <td>Sensitive File Exposed: /backup.bak</td>
+          <td><span class="badge" style="background:#ff4757">critical</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/backup.bak</td>
+        </tr>
+        <tr>
+          <td>Sensitive File Exposed: /config.bak</td>
+          <td><span class="badge" style="background:#ff4757">critical</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/config.bak</td>
+        </tr>
+        <tr>
+          <td>Sensitive File Exposed: /database.sql</td>
+          <td><span class="badge" style="background:#ff4757">critical</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/database.sql</td>
+        </tr>
+        <tr>
+          <td>Sensitive File Exposed: /db.sql</td>
+          <td><span class="badge" style="background:#ff4757">critical</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/db.sql</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /.htaccess</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/.htaccess</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /phpinfo.php</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://web.whatsapp.com/phpinfo.php</td>
+        </tr></tbody>
+  </table>
+</div>
+
+<!-- Per-Vulnerability Details -->
+<div class="section">
+  <h2>Vulnerability Details</h2>
+  
+      <div class="vuln-detail">
+        <h3>Missing X-Frame-Options Header</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ffa502">medium</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 - Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>X-Frame-Options</code></p>
+        <p><strong>Description:</strong> The X-Frame-Options security header is absent.</p>
+        
+        
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Missing Referrer-Policy Header</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 - Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>Referrer-Policy</code></p>
+        <p><strong>Description:</strong> The Referrer-Policy security header is absent.</p>
+        
+        
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>TLS Certificate Expiring Soon</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ffa502">medium</span></p>
+        <p><strong>OWASP Category:</strong> A02:2021 - Cryptographic Failures</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/</code></p>
+        
+        <p><strong>Description:</strong> The TLS certificate for web.whatsapp.com expires on Sep  3 23:59:59 2026 GMT (8 days remaining). Plan an immediate renewal.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>Certificate valid_to: Sep  3 23:59:59 2026 GMT</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /admin</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/admin</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/admin</code></p>
+        <p><strong>Description:</strong> The path &quot;/admin&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/admin</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /wp-admin</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/wp-admin</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/wp-admin</code></p>
+        <p><strong>Description:</strong> The path &quot;/wp-admin&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/wp-admin</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Sensitive File Exposed: /.env</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ff4757">critical</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/.env</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/.env</code></p>
+        <p><strong>Description:</strong> The sensitive file &quot;/.env&quot; is publicly accessible (HTTP 200). This file may contain secrets, credentials, or configuration data. Remove or restrict access to this resource immediately.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/.env</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Sensitive File Exposed: /.git/config</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ff4757">critical</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/.git/config</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/.git/config</code></p>
+        <p><strong>Description:</strong> The sensitive file &quot;/.git/config&quot; is publicly accessible (HTTP 200). This file may contain secrets, credentials, or configuration data. Remove or restrict access to this resource immediately.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/.git/config</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /backup</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/backup</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/backup</code></p>
+        <p><strong>Description:</strong> The path &quot;/backup&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/backup</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /config</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/config</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/config</code></p>
+        <p><strong>Description:</strong> The path &quot;/config&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/config</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /robots.txt</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/robots.txt</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/robots.txt</code></p>
+        <p><strong>Description:</strong> The path &quot;/robots.txt&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/robots.txt</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /sitemap.xml</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/sitemap.xml</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/sitemap.xml</code></p>
+        <p><strong>Description:</strong> The path &quot;/sitemap.xml&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/sitemap.xml</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Sensitive File Exposed: /backup.sql</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ff4757">critical</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/backup.sql</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/backup.sql</code></p>
+        <p><strong>Description:</strong> The sensitive file &quot;/backup.sql&quot; is publicly accessible (HTTP 200). This file may contain secrets, credentials, or configuration data. Remove or restrict access to this resource immediately.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/backup.sql</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Sensitive File Exposed: /backup.bak</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ff4757">critical</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/backup.bak</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/backup.bak</code></p>
+        <p><strong>Description:</strong> The sensitive file &quot;/backup.bak&quot; is publicly accessible (HTTP 200). This file may contain secrets, credentials, or configuration data. Remove or restrict access to this resource immediately.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/backup.bak</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Sensitive File Exposed: /config.bak</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ff4757">critical</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/config.bak</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/config.bak</code></p>
+        <p><strong>Description:</strong> The sensitive file &quot;/config.bak&quot; is publicly accessible (HTTP 200). This file may contain secrets, credentials, or configuration data. Remove or restrict access to this resource immediately.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/config.bak</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Sensitive File Exposed: /database.sql</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ff4757">critical</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/database.sql</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/database.sql</code></p>
+        <p><strong>Description:</strong> The sensitive file &quot;/database.sql&quot; is publicly accessible (HTTP 200). This file may contain secrets, credentials, or configuration data. Remove or restrict access to this resource immediately.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/database.sql</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Sensitive File Exposed: /db.sql</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ff4757">critical</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/db.sql</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/db.sql</code></p>
+        <p><strong>Description:</strong> The sensitive file &quot;/db.sql&quot; is publicly accessible (HTTP 200). This file may contain secrets, credentials, or configuration data. Remove or restrict access to this resource immediately.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/db.sql</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /.htaccess</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/.htaccess</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/.htaccess</code></p>
+        <p><strong>Description:</strong> The path &quot;/.htaccess&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/.htaccess</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /phpinfo.php</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://web.whatsapp.com/phpinfo.php</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/phpinfo.php</code></p>
+        <p><strong>Description:</strong> The path &quot;/phpinfo.php&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://web.whatsapp.com/phpinfo.php</code></p>
+        
+        
+      </div>
+</div>
+
+<!-- Appendix -->
+<div class="section">
+  <h2>Appendix</h2>
+  <p>Report generated by WebShield on 2026-08-26T17:53:03.260Z.</p>
+  <p>Scan ID: e0f23f00-e6a3-4e9b-a18f-7287b7774487</p>
+</div>
+
+</body>
+</html>

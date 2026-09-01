@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebShield Security Report — https://digitalmandee.com/</title>
+<style>
+  body { font-family: Arial, sans-serif; color: #222; margin: 0; padding: 0; }
+  .cover { background: #0a0f1e; color: #fff; padding: 60px 40px; page-break-after: always; }
+  .cover h1 { font-size: 2.5rem; margin-bottom: 8px; }
+  .cover p { font-size: 1.1rem; color: #aaa; }
+  .section { padding: 30px 40px; }
+  h2 { color: #0a0f1e; border-bottom: 2px solid #00d4ff; padding-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th { background: #0a0f1e; color: #fff; padding: 8px 12px; text-align: left; }
+  td { padding: 8px 12px; border-bottom: 1px solid #e0e0e0; }
+  tr:nth-child(even) td { background: #f9f9f9; }
+  .badge { display:inline-block; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 0.85rem; text-transform: capitalize; }
+  .vuln-detail { margin: 20px 0; }
+  code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9rem; word-break: break-all; }
+  .risk-summary { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
+  .risk-card { padding: 16px 24px; border-radius: 8px; color: #fff; text-align: center; min-width: 100px; }
+  .risk-card .count { font-size: 2rem; font-weight: bold; }
+  .risk-card .label { font-size: 0.85rem; text-transform: capitalize; }
+  pre { white-space: pre-wrap; word-break: break-word; }
+</style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<div class="cover">
+  <h1>🛡️ WebShield Security Report</h1>
+  <p><strong>Target:</strong> https://digitalmandee.com/</p>
+  <p><strong>Scan Date:</strong> 8/27/2026, 1:21:30 PM</p>
+  <p><strong>Duration:</strong> 51s</p>
+  <p><strong>Total Vulnerabilities:</strong> 21</p>
+  <p><strong>Status:</strong> completed</p>
+</div>
+
+<!-- Executive Summary -->
+<div class="section">
+  <h2>Executive Summary</h2>
+  <pre>Security Scan Summary
+
+The scan identified 21 vulnerability/vulnerabilities in total. Critical: 0, High: 1, Medium: 3, Low: 17.
+
+Immediate attention is recommended for all Critical and High severity findings. Please review each vulnerability and apply the recommended remediations.</pre>
+</div>
+
+<!-- Risk Summary -->
+<div class="section">
+  <h2>Risk Summary</h2>
+  <div class="risk-summary">
+    
+      <div class="risk-card" style="background:#ff4757">
+        <div class="count">0</div>
+        <div class="label">critical</div>
+      </div>
+      <div class="risk-card" style="background:#ff6348">
+        <div class="count">1</div>
+        <div class="label">high</div>
+      </div>
+      <div class="risk-card" style="background:#ffa502">
+        <div class="count">3</div>
+        <div class="label">medium</div>
+      </div>
+      <div class="risk-card" style="background:#2ed573">
+        <div class="count">17</div>
+        <div class="label">low</div>
+      </div>
+      <div class="risk-card" style="background:#747d8c">
+        <div class="count">0</div>
+        <div class="label">informational</div>
+      </div>
+  </div>
+</div>
+
+<!-- OWASP Breakdown -->
+<div class="section">
+  <h2>OWASP Category Breakdown</h2>
+  <table>
+    <thead><tr><th>OWASP Category</th><th>Count</th></tr></thead>
+    <tbody><tr><td>A05:2021 – Security Misconfiguration</td><td>15</td></tr><tr><td>A05:2021 - Security Misconfiguration</td><td>6</td></tr></tbody>
+  </table>
+</div>
+
+<!-- Vulnerability Findings Table -->
+<div class="section">
+  <h2>Vulnerability Findings (21 total)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Risk Level</th><th>OWASP Category</th><th>AI Score</th><th>Affected URL</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>Missing Content-Security-Policy Header</td>
+          <td><span class="badge" style="background:#ffa502">medium</span></td>
+          <td>A05:2021 - Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/</td>
+        </tr>
+        <tr>
+          <td>Missing X-Frame-Options Header</td>
+          <td><span class="badge" style="background:#ffa502">medium</span></td>
+          <td>A05:2021 - Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/</td>
+        </tr>
+        <tr>
+          <td>Missing X-Content-Type-Options Header</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 - Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/</td>
+        </tr>
+        <tr>
+          <td>Missing Strict-Transport-Security Header</td>
+          <td><span class="badge" style="background:#ff6348">high</span></td>
+          <td>A05:2021 - Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/</td>
+        </tr>
+        <tr>
+          <td>Missing Referrer-Policy Header</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 - Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/</td>
+        </tr>
+        <tr>
+          <td>Missing Permissions-Policy Header</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 - Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /admin</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/admin</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /wp-admin</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/wp-admin</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /.env</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/.env</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /.git/config</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/.git/config</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /robots.txt</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/robots.txt</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /sitemap.xml</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/sitemap.xml</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /backup.sql</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/backup.sql</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /backup.bak</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/backup.bak</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /config.bak</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/config.bak</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /database.sql</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/database.sql</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /db.sql</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/db.sql</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /.htaccess</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/.htaccess</td>
+        </tr>
+        <tr>
+          <td>Accessible Path Discovered: /phpinfo.php</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/phpinfo.php</td>
+        </tr>
+        <tr>
+          <td>Debug or Version-Disclosure Header Present</td>
+          <td><span class="badge" style="background:#ffa502">medium</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/</td>
+        </tr>
+        <tr>
+          <td>Email Address Exposed in Response Body</td>
+          <td><span class="badge" style="background:#2ed573">low</span></td>
+          <td>A05:2021 – Security Misconfiguration</td>
+          <td>N/A</td>
+          <td>https://digitalmandee.com/</td>
+        </tr></tbody>
+  </table>
+</div>
+
+<!-- Per-Vulnerability Details -->
+<div class="section">
+  <h2>Vulnerability Details</h2>
+  
+      <div class="vuln-detail">
+        <h3>Missing Content-Security-Policy Header</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ffa502">medium</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 - Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>Content-Security-Policy</code></p>
+        <p><strong>Description:</strong> The Content-Security-Policy security header is absent.</p>
+        
+        
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Missing X-Frame-Options Header</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ffa502">medium</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 - Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>X-Frame-Options</code></p>
+        <p><strong>Description:</strong> The X-Frame-Options security header is absent.</p>
+        
+        
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Missing X-Content-Type-Options Header</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 - Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>X-Content-Type-Options</code></p>
+        <p><strong>Description:</strong> The X-Content-Type-Options security header is absent.</p>
+        
+        
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Missing Strict-Transport-Security Header</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ff6348">high</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 - Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>Strict-Transport-Security</code></p>
+        <p><strong>Description:</strong> The Strict-Transport-Security security header is absent.</p>
+        
+        
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Missing Referrer-Policy Header</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 - Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>Referrer-Policy</code></p>
+        <p><strong>Description:</strong> The Referrer-Policy security header is absent.</p>
+        
+        
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Missing Permissions-Policy Header</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 - Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>Permissions-Policy</code></p>
+        <p><strong>Description:</strong> The Permissions-Policy security header is absent.</p>
+        
+        
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /admin</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/admin</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/admin</code></p>
+        <p><strong>Description:</strong> The path &quot;/admin&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://digitalmandee.com/admin</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /wp-admin</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/wp-admin</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/wp-admin</code></p>
+        <p><strong>Description:</strong> The path &quot;/wp-admin&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://digitalmandee.com/wp-admin</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /.env</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/.env</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/.env</code></p>
+        <p><strong>Description:</strong> The path &quot;/.env&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/.env</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /.git/config</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/.git/config</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/.git/config</code></p>
+        <p><strong>Description:</strong> The path &quot;/.git/config&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/.git/config</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /robots.txt</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/robots.txt</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/robots.txt</code></p>
+        <p><strong>Description:</strong> The path &quot;/robots.txt&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://digitalmandee.com/robots.txt</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /sitemap.xml</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/sitemap.xml</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/sitemap.xml</code></p>
+        <p><strong>Description:</strong> The path &quot;/sitemap.xml&quot; is accessible and returned HTTP 200. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 200 response for https://digitalmandee.com/sitemap.xml</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /backup.sql</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/backup.sql</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/backup.sql</code></p>
+        <p><strong>Description:</strong> The path &quot;/backup.sql&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/backup.sql</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /backup.bak</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/backup.bak</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/backup.bak</code></p>
+        <p><strong>Description:</strong> The path &quot;/backup.bak&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/backup.bak</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /config.bak</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/config.bak</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/config.bak</code></p>
+        <p><strong>Description:</strong> The path &quot;/config.bak&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/config.bak</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /database.sql</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/database.sql</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/database.sql</code></p>
+        <p><strong>Description:</strong> The path &quot;/database.sql&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/database.sql</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /db.sql</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/db.sql</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/db.sql</code></p>
+        <p><strong>Description:</strong> The path &quot;/db.sql&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/db.sql</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /.htaccess</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/.htaccess</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/.htaccess</code></p>
+        <p><strong>Description:</strong> The path &quot;/.htaccess&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/.htaccess</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Accessible Path Discovered: /phpinfo.php</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/phpinfo.php</code></p>
+        <p><strong>Affected Parameter:</strong> <code>/phpinfo.php</code></p>
+        <p><strong>Description:</strong> The path &quot;/phpinfo.php&quot; is accessible and returned HTTP 403. Verify whether this resource should be publicly reachable. If not, restrict access via server configuration or firewall rules.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>HTTP 403 response for https://digitalmandee.com/phpinfo.php</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Debug or Version-Disclosure Header Present</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#ffa502">medium</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>Debug Info Header</code></p>
+        <p><strong>Description:</strong> A debug or version-disclosure header (X-Debug, X-Powered-By, or Server) was detected in the response headers of &quot;https://digitalmandee.com/&quot;. These headers disclose technology stack details that can assist attackers in identifying known vulnerabilities. Remove or suppress these headers in production.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>Detected pattern type: Debug Info Header</code></p>
+        
+        
+      </div><hr>
+      <div class="vuln-detail">
+        <h3>Email Address Exposed in Response Body</h3>
+        <p><strong>Risk Level:</strong> <span class="badge" style="background:#2ed573">low</span></p>
+        <p><strong>OWASP Category:</strong> A05:2021 – Security Misconfiguration</p>
+        <p><strong>Affected URL:</strong> <code>https://digitalmandee.com/</code></p>
+        <p><strong>Affected Parameter:</strong> <code>Email Address Pattern</code></p>
+        <p><strong>Description:</strong> An email address pattern was detected in the response body of &quot;https://digitalmandee.com/&quot;. Exposed email addresses can be harvested for phishing or spam campaigns. Evaluate whether this disclosure is intentional; if not, remove or obfuscate the address.</p>
+        
+        <p><strong>PoC Payload:</strong> <code>Detected pattern type: Email Address Pattern</code></p>
+        
+        
+      </div>
+</div>
+
+<!-- Appendix -->
+<div class="section">
+  <h2>Appendix</h2>
+  <p>Report generated by WebShield on 2026-08-27T08:23:47.374Z.</p>
+  <p>Scan ID: 75f57983-3b0e-4bc0-bc8d-5e262186a231</p>
+</div>
+
+</body>
+</html>
