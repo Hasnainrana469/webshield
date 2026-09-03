@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "packageManager": "npm@10.9.3",
+  "packageManager": "npm@11.17.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -31,6 +31,6 @@
   },
   "engines": {
     "node": "24.x",
-    "npm": "10.x"
+    "npm": "11.x"
   }
 }

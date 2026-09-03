@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "WebShield — AI-powered automated web security scanning platform",
   "private": true,
-  "packageManager": "npm@10.9.3",
+  "packageManager": "npm@11.17.0",
   "workspaces": [
     "backend",
     "frontend"
@@ -19,6 +19,6 @@
   },
   "engines": {
     "node": "24.x",
-    "npm": "10.x"
+    "npm": "11.x"
   }
 }
