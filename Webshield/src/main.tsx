@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './index.css';
 import App from './App.tsx';
 
+document.title = 'WebShield';
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
