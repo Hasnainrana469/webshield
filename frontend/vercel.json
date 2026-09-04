@@ -1,5 +1,5 @@
 {
-  "installCommand": "npm install --include=optional --force",
+  "installCommand": "npm install --include=optional",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
