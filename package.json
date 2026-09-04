@@ -18,7 +18,6 @@
     "migrate:rollback": "npm run migrate:rollback --workspace=backend"
   },
   "engines": {
-    "node": "24.x",
-    "npm": "11.x"
+    "node": "24.x"
   }
 }
