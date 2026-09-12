@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import api from '../lib/api';
+import api, { apiUrl } from '../lib/api';
 import GlassCard from '../components/ui/GlassCard';
 import SkeletonLoader from '../components/ui/SkeletonLoader';
 
@@ -42,7 +42,7 @@ export default function ReportsPage() {
 
   const handleDownload = (reportId: string, format: 'pdf' | 'html') => {
     const token = localStorage.getItem('token');
-    const url = `/api/v1/reports/${reportId}/download/${format}`;
+    const url = apiUrl(`/reports/${reportId}/download/${format}`);
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('download', `report-${reportId}.${format}`);
@@ -50,7 +50,12 @@ export default function ReportsPage() {
     fetch(url, {
       headers: { Authorization: `Bearer ${token ?? ''}` },
     })
-      .then((r) => r.blob())
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`Report download failed with HTTP ${response.status}`);
+        }
+        return response.blob();
+      })
       .then((blob) => {
         const blobUrl = URL.createObjectURL(blob);
         link.href = blobUrl;

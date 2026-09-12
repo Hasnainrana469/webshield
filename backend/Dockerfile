@@ -14,6 +14,8 @@ RUN npm run build
 # ── Stage 2: runner ───────────────────────────────────────────────────────────
 FROM node:24-alpine AS runner
 
+ENV NODE_ENV=production
+
 # Install Nmap and Chromium (for Puppeteer) via Alpine package manager
 RUN apk add --no-cache \
     nmap \
@@ -33,7 +35,7 @@ WORKDIR /app
 
 # Copy production dependencies from builder
 COPY package*.json ./
-RUN npm ci --omit=dev --ignore-scripts
+RUN npm ci --omit=dev
 
 # Copy compiled output
 COPY --from=builder /app/dist ./dist

@@ -3,6 +3,10 @@ const configuredApiBase = (import.meta.env.VITE_API_BASE_URL ?? '')
   .replace(/\/$/, '');
 const API_BASE = `${configuredApiBase}/api/v1`;
 
+export function apiUrl(path: string): string {
+  return `${API_BASE}${path}`;
+}
+
 function getToken(): string | null {
   return localStorage.getItem('token');
 }
@@ -27,7 +31,7 @@ async function apiFetch<T>(path: string, options: FetchOptions = {}): Promise<T>
     }
   }
 
-  const response = await fetch(`${API_BASE}${path}`, {
+  const response = await fetch(apiUrl(path), {
     ...fetchOptions,
     headers,
   });

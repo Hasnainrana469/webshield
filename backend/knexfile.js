@@ -22,9 +22,21 @@ function parseMysqlUrl(url) {
   }
 }
 
+function getConnection(url) {
+  if (!url) return parseMysqlUrl('mysql://root:@localhost:3306/webshield');
+  if (dbClient === 'mysql2') return parseMysqlUrl(url);
+  if (process.env.PGSSL === 'true') {
+    return {
+      connectionString: url,
+      ssl: { rejectUnauthorized: false },
+    };
+  }
+  return url;
+}
+
 const dbUrl = process.env.DATABASE_URL;
 const dbClient = getDbClient(dbUrl);
-const connection = !dbUrl || dbClient === 'mysql2' ? parseMysqlUrl(dbUrl || 'mysql://root:@localhost:3306/webshield') : dbUrl;
+const connection = getConnection(dbUrl);
 
 module.exports = {
   development: {
@@ -43,7 +55,7 @@ module.exports = {
   production: {
     client: dbClient,
     connection,
-    migrations: { tableName: 'knex_migrations', directory: './dist/db/migrations' },
+    migrations: { tableName: 'knex_migrations', directory: './dist/db/migrations', loadExtensions: ['.js'] },
     pool: { min: 2, max: 10 },
   },
 };

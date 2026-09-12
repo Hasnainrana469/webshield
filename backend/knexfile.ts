@@ -33,6 +33,12 @@ function parseMysqlUrl(url: string) {
 function getConnection(url?: string) {
   if (!url) return parseMysqlUrl('mysql://root:@localhost:3306/webshield');
   if (dbClient === 'mysql2') return parseMysqlUrl(url);
+  if (process.env.PGSSL === 'true') {
+    return {
+      connectionString: url,
+      ssl: { rejectUnauthorized: false },
+    };
+  }
   return url; // pg accepts connection strings directly
 }
 
@@ -75,6 +81,7 @@ const config: { [key: string]: Knex.Config } = {
     migrations: {
       tableName: 'knex_migrations',
       directory: './dist/db/migrations',
+      loadExtensions: ['.js'],
     },
     pool: {
       min: 2,
