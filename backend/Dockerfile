@@ -1,5 +1,5 @@
 # ── Stage 1: builder ──────────────────────────────────────────────────────────
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ COPY . .
 RUN npm run build
 
 # ── Stage 2: runner ───────────────────────────────────────────────────────────
-FROM node:20-alpine AS runner
+FROM node:24-alpine AS runner
 
 # Install Nmap and Chromium (for Puppeteer) via Alpine package manager
 RUN apk add --no-cache \
